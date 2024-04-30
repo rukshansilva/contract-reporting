@@ -1,6 +1,12 @@
-package com.oracle.contractportfolio.output;
+package com.oracle.reporting.output;
 
-public interface DataOutputWriter <Input, Output> {
+/**
+ * Input Data Writer Interface
+ *
+ * @author Rukshan Silva
+ * @since 1.0
+ */
+public interface DataOutputWriter <I, R> {
 
-    Output processOutput(Input input);
+    R processOutput(I input);
 }

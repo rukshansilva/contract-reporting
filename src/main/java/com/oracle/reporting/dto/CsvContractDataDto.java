@@ -1,5 +1,11 @@
-package com.oracle.contractportfolio.dto;
+package com.oracle.reporting.dto;
 
+/**
+ * CSV Contract data transfer object
+ *
+ * @author Rukshan Silva
+ * @since 1.0
+ */
 public class CsvContractDataDto {
 
     private Long customerId;
@@ -13,19 +19,6 @@ public class CsvContractDataDto {
     private String projectcode;
 
     private Long buildduration;
-
-    public CsvContractDataDto() {}
-
-    public CsvContractDataDto(Long customerId, Long contractId, String geozone,
-                              String teamcode, String projectcode, Long buildduration) {
-
-        this.customerId = customerId;
-        this.contractId = contractId;
-        this.geozone = geozone;
-        this.teamcode = teamcode;
-        this.projectcode = projectcode;
-        this.buildduration = buildduration;
-    }
 
     public Long getCustomerId() {
         return customerId;
@@ -50,4 +43,5 @@ public class CsvContractDataDto {
     public Long getBuildduration() {
         return buildduration;
     }
+
 }

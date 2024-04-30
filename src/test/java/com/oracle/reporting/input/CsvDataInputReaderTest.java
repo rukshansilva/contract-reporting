@@ -1,17 +1,27 @@
-package com.oracle.reporting;
+package com.oracle.reporting.input;
 
-import com.oracle.reporting.dto.CsvContractDataDto;
 import com.oracle.reporting.input.impl.CsvDataInputReader;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class CsvDataInputReaderTest {
 
-	@Test
-	public void testProcessInput() {
+		private static CsvDataInputReader csvDataInputReader = null;
 
-		assertEquals(new CsvDataInputReader().processInput("C:/test.csv").getCustomerId(), new CsvContractDataDto().getCustomerId());
-	}
+		@BeforeAll
+		public static void setup() {
+			csvDataInputReader = new CsvDataInputReader();
+		}
 
+		@Test
+		public void testProcessInput() {
+
+			assertAll(
+					() -> assertEquals(csvDataInputReader.processInput("C:/test.csv").size(), 1),
+					() -> assertNull(csvDataInputReader.processInput("C:/test.csv").stream().findFirst().get().getCustomerId()));
+		}
 }

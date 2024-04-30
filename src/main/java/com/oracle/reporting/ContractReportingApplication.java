@@ -1,14 +1,20 @@
-package com.oracle.contractportfolio;
+package com.oracle.reporting;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ContractPortfolioApplication {
+/**
+ * Main Application class
+ *
+ * @author Rukshan Silva
+ * @since 1.0
+ */
+public class ContractReportingApplication {
 
-	private static final Logger logger = LogManager.getLogger(ContractPortfolioApplication.class);
+	private static final Logger logger = LogManager.getLogger(ContractReportingApplication.class);
 
 	public static void main(String[] args) {
 
-		logger.info("We've just greeted the user!");
+		logger.info("All DONE !");
 	}
 }

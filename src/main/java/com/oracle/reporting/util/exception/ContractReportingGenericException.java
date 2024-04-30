@@ -6,17 +6,17 @@ package com.oracle.reporting.util.exception;
  * @author Rukshan Silva
  * @since 1.0
  */
-public class ContractPortfolioGenericException extends Exception {
+public class ContractReportingGenericException extends Exception {
 
-    public ContractPortfolioGenericException(String message) {
+    public ContractReportingGenericException(String message) {
         super(message);
     }
 
-    public ContractPortfolioGenericException(Throwable throwable) {
+    public ContractReportingGenericException(Throwable throwable) {
         super(throwable);
     }
 
-    public ContractPortfolioGenericException(String message, Throwable throwable) {
+    public ContractReportingGenericException(String message, Throwable throwable) {
         super(message, throwable);
     }
 }

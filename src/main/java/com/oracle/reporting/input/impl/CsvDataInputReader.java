@@ -1,16 +1,25 @@
-package com.oracle.contractportfolio.input.impl;
+package com.oracle.reporting.input.impl;
 
-import com.oracle.contractportfolio.dto.CsvContractDataDto;
-import com.oracle.contractportfolio.input.DataInputReader;
+import com.oracle.reporting.dto.CsvContractDataDto;
+import com.oracle.reporting.input.DataInputReader;
 
-public class CsvDataInputReader implements DataInputReader <String, CsvContractDataDto>{
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * CSV input Reader
+ *
+ * @author Rukshan Silva
+ * @since 1.0
+ */
+public class CsvDataInputReader implements DataInputReader <String, List<CsvContractDataDto>>{
 
     /**
-     * @param input input Filename
-     * @return CsvContractDataDto Object
+     * @param fileName input Filename
+     * @return CsvContractDataDto Object List
      */
     @Override
-    public CsvContractDataDto processInput(String input) {
-        return new CsvContractDataDto();
+    public List<CsvContractDataDto> processInput(String fileName) {
+        return Arrays.asList(new CsvContractDataDto());
     }
 }

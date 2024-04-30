@@ -1,33 +1,41 @@
-package com.oracle.contractportfolio.output.impl;
+package com.oracle.reporting.output.impl;
+
+import com.oracle.reporting.dto.CsvContractDataDto;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Reporting data output generator
+ *
+ * @author Rukshan Silva
+ * @since 1.0
+ */
 public class ReportingOutputGenerator {
 
-    protected Map<Long, Integer> calcTotalCustomerIdsPerContractId() {
+    public Map<Long, Integer> calcTotalCustomerIdsPerContractId(List<CsvContractDataDto> csvContractDataList) {
 
         //Map of ContractId, Number of Unique Customer Ids
 
         return new HashMap<>();
     }
 
-    protected Map<String, Integer> calcTotalCustomerIdsPerGeozone() {
+    public Map<String, Integer> calcTotalCustomerIdsPerGeozone(List<CsvContractDataDto> csvContractDataList) {
 
         //Map of Geozone, Number of Unique Customer Ids
 
         return new HashMap<>();
     }
 
-    protected Map<String, Integer> calcAvgBuilddurationPerGeozone() {
+    public Map<String, Integer> calcAvgBuilddurationPerGeozone(List<CsvContractDataDto> csvContractDataList) {
 
         //Map of Geozone, Average Buildduration
 
         return new HashMap<>();
     }
 
-    protected Map<String, List<Long>>  printCustomerIdsPerGeozone() {
+    public Map<String, List<Long>>  printCustomerIdsPerGeozone(List<CsvContractDataDto> csvContractDataList) {
 
         //Map of Geozone, List of Unique Customer Ids
 

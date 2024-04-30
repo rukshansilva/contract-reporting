@@ -1,6 +1,12 @@
-package com.oracle.contractportfolio.input;
+package com.oracle.reporting.input;
 
-public interface DataInputReader <Input, Output> {
+/**
+ * Input Data Reader Interface
+ *
+ * @author Rukshan Silva
+ * @since 1.0
+ */
+public interface DataInputReader <I, R> {
 
-    Output processInput(Input input);
+    R processInput(I input);
 }
