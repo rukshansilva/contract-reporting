@@ -7,7 +7,7 @@ package com.oracle.reporting.service;
  * @author Rukshan Silva
  * @since 1.0
  */
-public interface ContractPortfolioService <I> {
+public interface ContractPortfolioService<I> {
 
     Boolean generateContractReport(I input);
 }

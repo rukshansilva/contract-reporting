@@ -6,7 +6,10 @@ package com.oracle.reporting.output;
  * @author Rukshan Silva
  * @since 1.0
  */
-public interface DataOutputWriter <I, R> {
+public interface DataOutputWriter<I, R> {
 
+    /**
+     * Process the Output
+     */
     R processOutput(I input);
 }

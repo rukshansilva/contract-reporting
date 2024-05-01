@@ -10,4 +10,5 @@ mvn clean install
 ### Assumptions:
 
 - The project requires Java 17
-- Uses JUnit (for Unit Testing) and Log4j2 (for Logging)
+- Uses JUnit dependency (for Unit Testing)  
+- More complex CSVs (e.g: with quotes or commas) will not be parsed as intended with this approach

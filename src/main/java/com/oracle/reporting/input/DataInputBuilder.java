@@ -3,15 +3,15 @@ package com.oracle.reporting.input;
 import com.oracle.reporting.util.exception.ContractReportingGenericException;
 
 /**
- * Input Data Reader Interface
+ * CSV input builder
  *
  * @author Rukshan Silva
  * @since 1.0
  */
-public interface DataInputReader<I, R> {
+public interface DataInputBuilder<I ,R> {
 
     /**
-     * Process the input
+     * Builds the Data Object
      */
-    R processInput(I input) throws ContractReportingGenericException;
+    R buildDataObject(I inputData) throws ContractReportingGenericException;
 }

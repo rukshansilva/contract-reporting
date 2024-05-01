@@ -18,7 +18,41 @@ public class CsvContractDataDto {
 
     private String projectcode;
 
-    private Long buildduration;
+    private Double buildduration;
+
+    public static CsvContractDataDto builder() {
+        return new CsvContractDataDto();
+    }
+
+    public CsvContractDataDto customerId(Long customerId) {
+        this.customerId = customerId;
+        return this;
+    }
+
+    public CsvContractDataDto contractId(Long contractId) {
+        this.contractId = contractId;
+        return this;
+    }
+
+    public CsvContractDataDto geozone(String geozone) {
+        this.geozone = geozone;
+        return this;
+    }
+
+    public CsvContractDataDto teamcode(String teamcode) {
+        this.teamcode = teamcode;
+        return this;
+    }
+
+    public CsvContractDataDto projectcode(String projectcode) {
+        this.projectcode = projectcode;
+        return this;
+    }
+
+    public CsvContractDataDto buildduration(Double buildduration) {
+        this.buildduration = buildduration;
+        return this;
+    }
 
     public Long getCustomerId() {
         return customerId;
@@ -40,7 +74,7 @@ public class CsvContractDataDto {
         return projectcode;
     }
 
-    public Long getBuildduration() {
+    public Double getBuildduration() {
         return buildduration;
     }
 
