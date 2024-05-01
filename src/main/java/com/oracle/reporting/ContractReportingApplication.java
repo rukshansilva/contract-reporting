@@ -1,7 +1,7 @@
 package com.oracle.reporting;
 
-import com.oracle.reporting.service.ContractPortfolioService;
-import com.oracle.reporting.service.impl.ContractPortfolioServiceImpl;
+import com.oracle.reporting.factory.ContractPortfolioServiceFactory;
+import com.oracle.reporting.util.constant.FactoryEnum;
 
 /**
  * Main Application class
@@ -13,14 +13,15 @@ public class ContractReportingApplication {
 
 		public static void main(String[] args) {
 
-			ContractPortfolioService contractPortfolioService = new ContractPortfolioServiceImpl();
+			System.out.println("Application task initiated !");
 
 			if(args.length == 0) {
 				System.err.println("Please provide the CSV String as an argument");
 				return;
 			}
 
-			contractPortfolioService.generateContractReport(args[0]);
-			System.out.println("Application tsk completed !");
+			ContractPortfolioServiceFactory.getInstance(FactoryEnum.CONTRACT_PORTFOLIO_SERVICE).
+					generateContractReport(args[0]);
+			System.out.println("Application task completed !");
 		}
 }

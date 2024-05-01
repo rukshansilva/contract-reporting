@@ -1,10 +1,9 @@
 package com.oracle.reporting.service.impl;
 
 import com.oracle.reporting.dto.CsvContractDataDto;
-import com.oracle.reporting.factory.DataFactory;
-import com.oracle.reporting.factory.impl.DataInputBuilderFactory;
-import com.oracle.reporting.factory.impl.DataInputReaderFactory;
-import com.oracle.reporting.factory.impl.DataOutputWriterFactory;
+import com.oracle.reporting.factory.DataInputBuilderFactory;
+import com.oracle.reporting.factory.DataInputReaderFactory;
+import com.oracle.reporting.factory.DataOutputWriterFactory;
 import com.oracle.reporting.input.DataInputBuilder;
 import com.oracle.reporting.input.DataInputReader;
 import com.oracle.reporting.output.DataOutputWriter;
@@ -23,14 +22,6 @@ import java.util.List;
  */
 public class ContractPortfolioServiceImpl implements ContractPortfolioService<String> {
 
-    private DataFactory dataInputBuilderFactory, dataInputReaderFactory, dataOutputWriterFactory;
-
-    public ContractPortfolioServiceImpl() {
-        dataInputBuilderFactory = new DataInputBuilderFactory();
-        dataInputReaderFactory = new DataInputReaderFactory();
-        dataOutputWriterFactory = new DataOutputWriterFactory();
-    }
-
     /**
      * Generates the contract report
      *
@@ -41,7 +32,7 @@ public class ContractPortfolioServiceImpl implements ContractPortfolioService<St
     public Boolean generateContractReport(String csvInput) {
 
         //Build the Input
-        DataInputReader inputReader = (DataInputReader) dataInputReaderFactory.getInstance(FactoryEnum.DATA_INPUT_READER_CSV);
+        DataInputReader inputReader = DataInputReaderFactory.getInstance(FactoryEnum.DATA_INPUT_READER_CSV);
         List<List<String>> csvInputLinesData;
         try {
             csvInputLinesData = (List<List<String>>) inputReader.processInput(csvInput);
@@ -51,7 +42,7 @@ public class ContractPortfolioServiceImpl implements ContractPortfolioService<St
             return Boolean.FALSE;
         }
 
-        DataInputBuilder csvDataInputBuilder = (DataInputBuilder) dataInputBuilderFactory.getInstance(FactoryEnum.DATA_INPUT_BUILDER_CSV);
+        DataInputBuilder csvDataInputBuilder = DataInputBuilderFactory.getInstance(FactoryEnum.DATA_INPUT_BUILDER_CSV);
         List<CsvContractDataDto> csvContractDataDtoList;
 
         try {
@@ -62,7 +53,7 @@ public class ContractPortfolioServiceImpl implements ContractPortfolioService<St
         }
 
         //Generate the Report
-        DataOutputWriter reportingDataOutputWriter = (DataOutputWriter) dataOutputWriterFactory.getInstance(FactoryEnum.DATA_OUTPUT_WRITER_REPORTING);
+        DataOutputWriter reportingDataOutputWriter = DataOutputWriterFactory.getInstance(FactoryEnum.DATA_OUTPUT_WRITER_REPORTING);
         String outputString = (String) reportingDataOutputWriter.processOutput(csvContractDataDtoList);
 
         //Print the Report

@@ -1,6 +1,5 @@
-package com.oracle.reporting.factory.impl;
+package com.oracle.reporting.factory;
 
-import com.oracle.reporting.factory.DataFactory;
 import com.oracle.reporting.input.DataInputReader;
 import com.oracle.reporting.input.impl.CsvDataInputReaderImpl;
 import com.oracle.reporting.util.constant.FactoryEnum;
@@ -11,13 +10,12 @@ import com.oracle.reporting.util.constant.FactoryEnum;
  * @author Rukshan Silva
  * @since 1.0
  */
-public class DataInputReaderFactory implements DataFactory<DataInputReader> {
+public class DataInputReaderFactory {
 
     /**
      * @return an Instance of DataInputReader
      */
-    @Override
-    public DataInputReader getInstance(FactoryEnum instance) {
+    public static DataInputReader getInstance(FactoryEnum instance) {
 
         if(FactoryEnum.DATA_INPUT_READER_CSV.equals(instance)) {
             return new CsvDataInputReaderImpl();

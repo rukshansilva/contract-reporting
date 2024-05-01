@@ -8,6 +8,8 @@ package com.oracle.reporting.util.constant;
  */
 public enum FactoryEnum {
 
+    CONTRACT_PORTFOLIO_SERVICE,
+
     DATA_INPUT_BUILDER_CSV,
     DATA_INPUT_READER_CSV,
 
