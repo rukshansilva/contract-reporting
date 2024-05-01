@@ -3,7 +3,7 @@ package com.oracle.reporting.output;
 import com.oracle.reporting.dto.CsvContractDataDto;
 import com.oracle.reporting.output.impl.ReportingDataOutputWriter;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.RepeatedTest;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,7 +34,7 @@ public class ReportingDataOutputWriterTest {
         reportingDataOutputWriter = new ReportingDataOutputWriter();
     }
 
-    @Test
+    @RepeatedTest(10)
     public void testProcessOutput() {
 
         assertEquals(reportingDataOutputWriter.processOutput(buildCsvContractDataObjects()), successOutput);

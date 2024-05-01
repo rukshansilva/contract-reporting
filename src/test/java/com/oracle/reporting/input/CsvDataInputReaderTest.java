@@ -67,5 +67,4 @@ public class CsvDataInputReaderTest {
 
 			assertEquals(exception.getMessage(), "Malformed CSV data - No data found");
 		}
-
 }

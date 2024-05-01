@@ -42,8 +42,9 @@ public class CsvDataInputBuilderImpl implements DataInputBuilder<List<List<Strin
                         geozone(csvInputData.get(2)).
                         teamcode(csvInputData.get(3)).
                         projectcode(csvInputData.get(4)).
-                        //Remove the seconds character in buildduration
-                        buildduration(Double.parseDouble(csvInputData.get(5).substring(0, csvInputData.get(5).length() - 1))));
+                        //Remove the seconds character in buildduration  if exists
+                        buildduration(Double.parseDouble(
+                                csvInputData.get(5).toLowerCase().endsWith("s") ? csvInputData.get(5).substring(0, csvInputData.get(5).length() - 1) : csvInputData.get(5))));
             }
         } catch (Exception e) {
             throw new ContractReportingGenericException(
