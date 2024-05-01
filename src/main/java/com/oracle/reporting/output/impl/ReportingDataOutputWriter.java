@@ -14,12 +14,6 @@ import java.util.Map;
  */
 public class ReportingDataOutputWriter implements DataOutputWriter<List<CsvContractDataDto>, String> {
 
-    private ReportingOutputGenerator reportingOutputGenerator;
-
-    public ReportingDataOutputWriter() {
-        reportingOutputGenerator = new ReportingOutputGenerator();
-    }
-
     /**
      * Process the Output
      * @param List of CsvContractDataDto
@@ -54,7 +48,7 @@ public class ReportingDataOutputWriter implements DataOutputWriter<List<CsvContr
     private void calcTotalCustomerIdsPerContractId(List<CsvContractDataDto> csvContractDataList, StringBuilder outputString) {
 
         //Map of ContractId, Number of Unique Customer Ids
-        Map<Long, Long> customerPerContractMap = reportingOutputGenerator.calcTotalCustomerIdsPerContractId(csvContractDataList);
+        Map<Long, Long> customerPerContractMap = ReportingOutputGenerator.calcTotalCustomerIdsPerContractId(csvContractDataList);
 
         if(! customerPerContractMap.isEmpty()) {
             outputString.append("The number of unique customerId for each contractId : \n");
@@ -73,7 +67,7 @@ public class ReportingDataOutputWriter implements DataOutputWriter<List<CsvContr
     private void calcTotalCustomerIdsPerGeozone(List<CsvContractDataDto> csvContractDataList, StringBuilder outputString) {
 
         //Map of Geozone, Number of Unique Customer Ids
-        Map<String, Long> customerPerGeozoneMap = reportingOutputGenerator.calcTotalCustomerIdsPerGeozone(csvContractDataList);
+        Map<String, Long> customerPerGeozoneMap = ReportingOutputGenerator.calcTotalCustomerIdsPerGeozone(csvContractDataList);
 
         if(! customerPerGeozoneMap.isEmpty()) {
             if (! outputString.toString().endsWith("\n")){
@@ -95,7 +89,7 @@ public class ReportingDataOutputWriter implements DataOutputWriter<List<CsvContr
     private void calcAvgBuilddurationPerGeozone(List<CsvContractDataDto> csvContractDataList, StringBuilder outputString) {
 
         //Map of Geozone, Average Buildduration
-        Map<String, Double> avgBuilddurationPerGeozoneMap = reportingOutputGenerator.calcAvgBuilddurationPerGeozone(csvContractDataList);
+        Map<String, Double> avgBuilddurationPerGeozoneMap = ReportingOutputGenerator.calcAvgBuilddurationPerGeozone(csvContractDataList);
 
         if(! avgBuilddurationPerGeozoneMap.isEmpty()) {
             if (! outputString.toString().endsWith("\n")){
@@ -117,7 +111,7 @@ public class ReportingDataOutputWriter implements DataOutputWriter<List<CsvContr
     private void getCustomerIdsPerGeozone(List<CsvContractDataDto> csvContractDataList, StringBuilder outputString) {
 
         //Map of Geozone, List of Unique Customer Ids
-        Map<String, List<Long>> customerIdsPerGeozoneMap = reportingOutputGenerator.getCustomerIdsPerGeozone(csvContractDataList);
+        Map<String, List<Long>> customerIdsPerGeozoneMap = ReportingOutputGenerator.getCustomerIdsPerGeozone(csvContractDataList);
 
         if(! customerIdsPerGeozoneMap.isEmpty()) {
             if (! outputString.toString().endsWith("\n")){

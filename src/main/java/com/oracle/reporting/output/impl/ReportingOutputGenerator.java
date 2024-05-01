@@ -19,7 +19,7 @@ public class ReportingOutputGenerator {
      * @param List of CsvContractDataDto
      * @return Output Map
      */
-    public Map<Long, Long> calcTotalCustomerIdsPerContractId(List<CsvContractDataDto> csvContractDataList) {
+    public static Map<Long, Long> calcTotalCustomerIdsPerContractId(List<CsvContractDataDto> csvContractDataList) {
 
         //Map of ContractId, Number of Unique Customer Ids
         return csvContractDataList.stream().collect(Collectors.groupingBy(CsvContractDataDto::getContractId)).
@@ -33,7 +33,7 @@ public class ReportingOutputGenerator {
      * @param List of CsvContractDataDto
      * @return Output Map
      */
-    public Map<String, Long> calcTotalCustomerIdsPerGeozone(List<CsvContractDataDto> csvContractDataList) {
+    public static Map<String, Long> calcTotalCustomerIdsPerGeozone(List<CsvContractDataDto> csvContractDataList) {
 
         //Map of Geozone, Number of Unique Customer Ids
         return csvContractDataList.stream().collect(Collectors.groupingBy(CsvContractDataDto::getGeozone)).
@@ -47,7 +47,7 @@ public class ReportingOutputGenerator {
      * @param List of CsvContractDataDto
      * @return Output Map
      */
-    public Map<String, Double> calcAvgBuilddurationPerGeozone(List<CsvContractDataDto> csvContractDataList) {
+    public static Map<String, Double> calcAvgBuilddurationPerGeozone(List<CsvContractDataDto> csvContractDataList) {
 
         //Map of Geozone, Average Buildduration
         return csvContractDataList.stream().collect(Collectors.groupingBy(CsvContractDataDto::getGeozone)).
@@ -60,7 +60,7 @@ public class ReportingOutputGenerator {
      * @param List of CsvContractDataDto
      * @return Output Map
      */
-    public Map<String, List<Long>> getCustomerIdsPerGeozone(List<CsvContractDataDto> csvContractDataList) {
+    public static Map<String, List<Long>> getCustomerIdsPerGeozone(List<CsvContractDataDto> csvContractDataList) {
 
         //Map of Geozone, List of Unique Customer Ids
         return csvContractDataList.stream().collect(Collectors.groupingBy(CsvContractDataDto::getGeozone)).
