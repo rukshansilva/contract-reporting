@@ -5,7 +5,7 @@ import com.oracle.reporting.service.impl.ContractPortfolioServiceImpl;
 import com.oracle.reporting.util.constant.FactoryEnum;
 
 /**
- * Data Input Reader Factory
+ * Contract Portfolio Service Factory
  *
  * @author Rukshan Silva
  * @since 1.0
@@ -13,7 +13,7 @@ import com.oracle.reporting.util.constant.FactoryEnum;
 public class ContractPortfolioServiceFactory {
 
     /**
-     * @return an Instance of DataInputReader
+     * @return an Instance of ContractPortfolioService
      */
     public static ContractPortfolioService getInstance(FactoryEnum instance) {
 
