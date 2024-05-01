@@ -42,6 +42,8 @@ public class CsvDataInputReaderImpl implements DataInputReader<String, List<List
             throw new ContractReportingGenericException("Malformed CSV data - No data found");
         }
 
+
+        System.out.println(String.format("Started processing %d lines in CSV", csvInputLines.length));
         List<List<String>> csvInputLinesData = new ArrayList<>();
 
         for (String line: csvInputLines) {
